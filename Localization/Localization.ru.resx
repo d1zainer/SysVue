@@ -272,4 +272,10 @@
   <data name="PercentValue" xml:space="preserve">
     <value>{0:0} %</value>
   </data>
+  <data name="TrayOpen" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="TrayExit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
 </root>

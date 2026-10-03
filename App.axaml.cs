@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
@@ -30,6 +31,23 @@ public partial class App : Application
             _store.Open();
             desktop.Exit += (_, _) => _store.Dispose();
             _store.ExitRequested += (_, _) => desktop.Shutdown();
+
+            var tray = new Tray(_store.Overview);
+
+            tray.Opened += (_, _) =>
+            {
+                if (desktop.MainWindow is not { } window)
+                {
+                    return;
+                }
+
+                window.WindowState = WindowState.Normal;
+                window.Show();
+                window.Activate();
+            };
+
+            tray.ExitRequested += (_, _) => desktop.Shutdown();
+            desktop.Exit += (_, _) => tray.Dispose();
 
             _store.ThemeChanged += (_, _) => ApplyTheme();
             _store.LanguageChanged += (_, _) =>

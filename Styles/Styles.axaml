@@ -8,5 +8,6 @@
     <StyleInclude Source="avares://SysVue/Styles/ComboBox.axaml" />
     <StyleInclude Source="avares://SysVue/Styles/HyperlinkButton.axaml" />
     <StyleInclude Source="avares://SysVue/Styles/MetricChart.axaml" />
+    <StyleInclude Source="avares://SysVue/Styles/TrayMenu.axaml" />
 
 </Styles>

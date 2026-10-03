@@ -558,5 +558,17 @@ namespace SystemProgramm {
                 return ResourceManager.GetString("ValueUnknown", resourceCulture);
             }
         }
+
+        public static string TrayOpen {
+            get {
+                return ResourceManager.GetString("TrayOpen", resourceCulture);
+            }
+        }
+
+        public static string TrayExit {
+            get {
+                return ResourceManager.GetString("TrayExit", resourceCulture);
+            }
+        }
     }
 }
